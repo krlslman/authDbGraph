@@ -1,34 +1,12 @@
-import { Tabs } from "antd";
-import OrderManagement from "../tab_data_table/data_table";
+import React from 'react'
 
-const items = [
-  {
-    label: "Data Table",
-    key: "1",
-    children: (
-      <>
-        <OrderManagement />
-      </>
-    ),
-  },
-  {
-    label: "Import & Export",
-    key: "3",
-    children: (
-      <>
+const PageImportExport = () => {
+  return (
+    <div>
         <p>Import</p>
         <p>Export</p>
-      </>
-    ),
-  },
-];
-
-const EqualDistrubution = () => {
-  return (
-    <div className="card-container">
-      <Tabs type="card" items={items} />
     </div>
-  );
-};
+  )
+}
 
-export default EqualDistrubution;
+export default PageImportExport

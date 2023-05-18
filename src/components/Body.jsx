@@ -6,9 +6,8 @@ import {
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
 import Home from "./panel_menu/home/Home";
-import Track from "./Tracker";
 import Graphs from "./panel_menu/graphs/Graphs";
-import EqualDistrubution from "./panel_menu/data_menu/tab_import_export/page";
+import ListTabsofData from "./panel_menu/data_menu/tab";
 import Image from "next/image";
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -120,7 +119,7 @@ const Body = () => {
             </Breadcrumb.Item>
           </Breadcrumb>
           {selectedItem.key == "id_home" && <Home />}
-          {selectedItem.key == "id_data" && <EqualDistrubution />}
+          {selectedItem.key == "id_data" && <ListTabsofData />}
           {selectedItem.key == "id_graphs" && <Graphs />}
           {selectedItem.key == "id_dropdown_sub1" && <div>id_dropdown_sub1 content</div>}
           {selectedItem.key == "id_dropdown_sub2" && <div>id_dropdown_sub2 content</div> }
