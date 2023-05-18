@@ -10,6 +10,8 @@ import { useUser } from '@auth0/nextjs-auth0/client'
 export default function Home() {
   const { user, error, isLoading } = useUser();
   console.log("user: ", user);
+  if (isLoading) return <div>Loading...</div>
+  if (error) return <div>{error.message}</div>
   return (
     <>
       <Head>
@@ -20,8 +22,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
           <Link href="/api/auth/login">login</Link>
-          <Link href="/api/auth/logout">logout</Link>
           <Link href="/api/auth/me">me</Link>
+          <Link href="/membersonly">membersonly</Link>
           
       </main>
     </>
