@@ -106,7 +106,7 @@ const PanelBody = () => {
           className="site-layout-background flex justify-end items-center"
           style={{ padding: 0, }} >
             <div className="flex items-center gap-2 pr-2 lg:pr-5">
-              <h6 className="">John Doe</h6>
+              <h6 className="text-white">John Doe</h6>
               <Avatar size="large" icon={<UserOutlined />} />
             </div>
         </Header>
