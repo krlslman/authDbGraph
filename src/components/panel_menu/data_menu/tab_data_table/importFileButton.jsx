@@ -71,7 +71,7 @@ const ImportFileButton = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="">
       <Upload beforeUpload={beforeUpload} maxCount={1}>
         <Button icon={<UploadOutlined />}>
           Select File [xls - csv - json]
@@ -79,7 +79,7 @@ const ImportFileButton = () => {
 
       </Upload>
         <button
-          onClick={() => setDataSource([])}
+          onClick={() => setFilteredDataSource([])}
           className="p-2 text-red-600 underline text-xs"
         >
           Delete Imported Data

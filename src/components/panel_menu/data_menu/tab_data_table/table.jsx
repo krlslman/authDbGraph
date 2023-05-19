@@ -111,8 +111,6 @@ const DataTable = () => {
 
   return (
     <div>
-      <FilterButton />
-      
       <Table
         columns={columns}
         dataSource={filteredDataSource}
