@@ -3,13 +3,22 @@ import {
   DownloadOutlined,
   SaveOutlined,
 } from "@ant-design/icons";
-import { Button, message, Space, Checkbox, Radio } from "antd";
+import { Button, message, Space, Checkbox, Radio, Modal } from "antd";
 import ImportFileButton from "./importFileButton";
 import { useStateContext } from '/src/context/StateContext'
 import FilterButton from "./FilterButton";
+import DownloadTestDataModal from "./DownloadTestFiles";
 
 const AboveTable = () => {
-  const {dataSource, setFilteredDataSource, radioFilter, setRadioFilter } = useStateContext();
+  const {dataSource, filteredDataSource, setFilteredDataSource, radioFilter, setRadioFilter } = useStateContext();
+  const [modalVisible, setModalVisible] = useState(false);
+  const handleOpenModal = () => {
+    setModalVisible(true);
+  };
+  const handleCloseModal = () => {
+    setModalVisible(false);
+  };
+
   const onChangeRadioButton = (e) => {
     if (e === "All"){
       setFilteredDataSource(dataSource);
@@ -28,10 +37,28 @@ const AboveTable = () => {
     }
   };
 
-  const handleButtonClick = (e) => {
-    message.info("Click on button.");
-    console.log("click button", e);
+
+  const handleDownloadButton = (e) => {
+    const dataStr = JSON.stringify(filteredDataSource);
+    const dataUri = "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
+  
+    // Open the modal to display the download link
+    Modal.info({
+      title: 'Download',
+      content: (
+        <div>
+          <p className="py-3">Filtered data (currently on screen) will be downloaded.<br/>Click the button to download the file.</p>
+          <Button type="primary" href={dataUri} download="data.json">
+            Download
+          </Button>
+        </div>
+      ),
+      centered: true, // Center the modal on the screen
+      maskClosable: true, // Allow closing the modal by clicking outside
+    });
   };
+  
+  
 
   return (
     <>
@@ -55,24 +82,37 @@ const AboveTable = () => {
         </div>
 
         <div className="flex gap-2 m-2">
-          <Button
-            type="default"
-            shape="round"
-            icon={<SaveOutlined />}
-            size={"default"}
-            onClick={handleButtonClick}
-          >
-            Save
-          </Button>
-          <Button
-            type="default"
-            shape="round"
-            icon={<DownloadOutlined />}
-            size={"default"}
-            onClick={handleButtonClick}
-          >
-            Download .xls
-          </Button>
+          <div className="asd">
+            <Button
+              type="default"
+              shape="round"
+              icon={<SaveOutlined />}
+              size={"default"}
+              // onClick={}
+              disabled
+              >
+              Save
+            </Button>
+            <Button
+              type="default"
+              shape="round"
+              icon={<DownloadOutlined />}
+              size={"default"}
+              onClick={handleDownloadButton}
+              >
+              Download (.json)
+            </Button>
+          </div>
+            <Button
+                type="default"
+                shape="round"
+                icon={<DownloadOutlined />}
+                size={"default"}
+                onClick={handleOpenModal}
+                >
+                Download Test Files
+            </Button>
+            <DownloadTestDataModal visible={modalVisible} onClose={handleCloseModal} />
         </div>
       </section>
     </>
