@@ -1,18 +1,16 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import Link from 'next/link'
-import Script from 'next/script';
+// import styles from '@/styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
 import { useUser } from '@auth0/nextjs-auth0/client'
-
+import LandingPage from '../components/LandingPage'
+import PanelBody from '../components/PanelBody'
 
 export default function Home() {
   const { user, error, isLoading } = useUser();
-  console.log("user: ", user);
   if (isLoading) return <div>Loading...</div>
   if (error) return <div>{error.message}</div>
+  
   return (
     <>
       <Head>
@@ -21,12 +19,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd/dist/antd.min.css" />
-        </Head>
-      <main className={styles.main}>
-          <Link href="/api/auth/login">login</Link>
-          <Link href="/api/auth/me">me</Link>
-          <Link href="/membersonly">membersonly</Link>
-          
+      </Head>
+      <main>
+          { !user && <LandingPage /> }
+          { user && <PanelBody /> }
       </main>
     </>
   )

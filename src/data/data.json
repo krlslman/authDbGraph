@@ -1,6 +1,6 @@
 {
     "DataSet1": [
-      {"id":1,"depo":"LVMH Fragrance Brands","sehir":"Shentong","bazdagilim":0.12,"gunceldagilim":0.23,"stok":2394,"siparis":4270,"hakedis":2191,"sip_hak_fark":2079,"gonderim":262,"aysonustok":329,"aysonusit":0},
+      {"id":1,"depo":"LVMH Fragrance Brands json","sehir":"Shentong","bazdagilim":0.12,"gunceldagilim":0.23,"stok":2394,"siparis":4270,"hakedis":2191,"sip_hak_fark":2079,"gonderim":262,"aysonustok":329,"aysonusit":0},
       {"id":2,"depo":"McKesson","sehir":"Bidyā","bazdagilim":0.3,"gunceldagilim":0.08,"stok":677,"siparis":3583,"hakedis":1263,"sip_hak_fark":2320,"gonderim":1693,"aysonustok":102,"aysonusit":9},
       {"id":3,"depo":"Mylan Pharmaceuticals Inc.","sehir":"Tadine","bazdagilim":0.16,"gunceldagilim":0.09,"stok":1073,"siparis":3182,"hakedis":2557,"sip_hak_fark":625,"gonderim":1919,"aysonustok":2347,"aysonusit":27},
       {"id":4,"depo":"ALK-Abello, Inc.","sehir":"Yoshkar-Ola","bazdagilim":0.3,"gunceldagilim":0.18,"stok":2385,"siparis":4822,"hakedis":2162,"sip_hak_fark":2660,"gonderim":1945,"aysonustok":256,"aysonusit":32},

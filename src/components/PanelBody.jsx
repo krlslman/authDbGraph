@@ -3,8 +3,9 @@ import {
   HomeOutlined,
   BarChartOutlined,
   DropboxOutlined,
+  UserOutlined
 } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu } from "antd";
+import { Breadcrumb, Layout, Menu, Avatar } from "antd";
 import Home from "./panel_menu/home/Home";
 import Graphs from "./panel_menu/graphs/Graphs";
 import ListTabsofData from "./panel_menu/data_menu/tab";
@@ -30,7 +31,7 @@ const panelItems = [
   ]),
 ];
 
-const Body = () => {
+const PanelBody = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   const [selectedKey, setSelectedKey] = useState("id_home");
@@ -78,13 +79,13 @@ const Body = () => {
             className=""
             src="/assets/logo_s.png"
             alt="Vite Logo"
-            height={100}
-            width={220}
+            height={80}
+            width={70}
             style={{ objectFit: "contain" }}
           />
         </div>
         <p
-          className=""
+          className="px-2"
           style={{ color: "white", textAlign: "center", paddingBottom: "1rem" }}
         >
           Admin Panel
@@ -102,11 +103,13 @@ const Body = () => {
 
       <Layout className="site-layout">
         <Header
-          className="site-layout-background"
-          style={{
-            padding: 0,
-          }}
-        />
+          className="site-layout-background flex justify-end items-center"
+          style={{ padding: 0, }} >
+            <div className="flex items-center gap-2 pr-2 lg:pr-5">
+              <h6 className="">John Doe</h6>
+              <Avatar size="large" icon={<UserOutlined />} />
+            </div>
+        </Header>
         <Content
           style={{
             margin: "0 16px",
@@ -127,8 +130,7 @@ const Body = () => {
         <Footer
           style={{
             textAlign: "center",
-          }}
-        >
+          }}        >
           Created by SK ©2023
         </Footer>
       </Layout>
@@ -136,4 +138,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default PanelBody;

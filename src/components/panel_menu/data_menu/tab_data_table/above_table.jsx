@@ -83,24 +83,6 @@ const AboveTable = () => {
               <DownOutlined />
             </Button>
           </Dropdown>
-          <Dropdown menu={menuProps}>
-            <Button>
-              Level - 3
-              <DownOutlined />
-            </Button>
-          </Dropdown>
-          <Dropdown menu={menuProps}>
-            <Button>
-              Level - 2
-              <DownOutlined />
-            </Button>
-          </Dropdown>
-          <Dropdown menu={menuProps}>
-            <Button>
-              Level - 1
-              <DownOutlined />
-            </Button>
-          </Dropdown>
         </Space>
 
         <Space wrap className="level-warehouse-dropdown-btns">
@@ -112,23 +94,8 @@ const AboveTable = () => {
               </Space>
             </Button>
           </Dropdown>
-          <Dropdown menu={menuProps}>
-            <Button>
-              <Space>
-                Warehouse - 2
-                <DownOutlined />
-              </Space>
-            </Button>
-          </Dropdown>
-          <Dropdown menu={menuProps}>
-            <Button>
-              <Space>
-                Warehouse - 1
-                <DownOutlined />
-              </Space>
-            </Button>
-          </Dropdown>
         </Space>
+        
         <div
           className=""
           style={{
@@ -172,7 +139,7 @@ const AboveTable = () => {
             }}
           >
             <Button
-              type="primary"
+              type="default"
               shape="round"
               size={"default"}
               onClick={handleButtonClick}
@@ -180,7 +147,7 @@ const AboveTable = () => {
               Calc | Budged
             </Button>
             <Button
-              type="primary"
+              type="default"
               shape="round"
               size={"default"}
               onClick={handleButtonClick}
@@ -188,7 +155,7 @@ const AboveTable = () => {
               Calc | Target
             </Button>
             <Button
-              type="primary"
+              type="default"
               shape="round"
               icon={<SaveOutlined />}
               size={"default"}
@@ -197,7 +164,7 @@ const AboveTable = () => {
               Save
             </Button>
             <Button
-              type="primary"
+              type="default"
               shape="round"
               icon={<DownloadOutlined />}
               size={"default"}
