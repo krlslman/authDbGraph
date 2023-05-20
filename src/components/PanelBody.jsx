@@ -108,6 +108,7 @@ const PanelBody = () => {
           style={{ padding: 0, }} >
             <div className="flex items-center gap-2 pr-2 lg:pr-5">
               <h6 className="text-white">John Doe</h6>
+              <Link className="text-white" href="/api/auth/logout">logout</Link>
               <Avatar size="large" icon={<UserOutlined />} />
             </div>
         </Header>
