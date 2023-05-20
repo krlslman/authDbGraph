@@ -10,6 +10,7 @@ import Home from "./panel_menu/home/Home";
 import Graphs from "./panel_menu/graphs/Graphs";
 import ListTabsofData from "./panel_menu/data_menu/tab";
 import Image from "next/image";
+import Link from 'next/link'; //
 
 const { Header, Content, Footer, Sider } = Layout;
 
