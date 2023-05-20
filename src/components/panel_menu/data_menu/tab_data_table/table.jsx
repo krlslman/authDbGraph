@@ -1,13 +1,11 @@
 import { Table, Input } from "antd"
 import { useState, useRef } from "react"
 import { SearchOutlined } from "@ant-design/icons"
-import ImportFileButton from './importFileButton'
 import { useStateContext } from '/src/context/StateContext'
-import FilterButton from './FilterButton'
 
 
 const DataTable = () => {
-  const { dataSource, filteredDataSource, setFilteredDataSource, filterWarehouse, setFilterWarehouse } = useStateContext();
+  const { filteredDataSource } = useStateContext();
 
   const searchInputRef = useRef(null);
   const columns = [

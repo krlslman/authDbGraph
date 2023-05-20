@@ -51,7 +51,7 @@ const FilterButton = () => {
         onClick={() => handleClearFilter() }
         className="p-2 text-red-600 underline text-xs"
     >
-        Clear Filter
+        Clear All Filters
     </button>
     </>
   )
