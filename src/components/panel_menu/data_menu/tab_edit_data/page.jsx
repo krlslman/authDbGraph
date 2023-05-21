@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Button, Form, Input, Popconfirm, Table, message } from "antd";
+import { Alert, Button, Form, Input, Popconfirm, Table, message } from "antd";
 import { SearchOutlined, DeleteOutlined, SaveOutlined } from "@ant-design/icons";
 import { useStateContext } from "/src/context/StateContext";
 const EditableContext = React.createContext(null);
@@ -229,7 +229,7 @@ const PageEditData = () => {
       dataIndex: "delete-row",
       render: (_, record) =>
         data.length >= 1 ? (
-          <Popconfirm title="Sure to delete?" okType="primary" className="text-red-600" onConfirm={() => handleDelete(record)}>
+          <Popconfirm title="This action will permanently delete this row. Sure?" okType="primary" className="text-red-600" onConfirm={() => handleDelete(record)}>
             <a><DeleteOutlined className="text-red-600"/></a>
           </Popconfirm>
         ) : null,
@@ -293,10 +293,10 @@ const PageEditData = () => {
       setFilteredDataSource(updatedData);
     }
   };
+  
   useEffect(() => {
     setData(filteredDataSource)
     setCount(filteredDataSource.length)
-    console.log("setData(filteredDataSource)");
   }, [filteredDataSource])
   
   const components = {
@@ -324,6 +324,14 @@ const PageEditData = () => {
 
   return (
     <div>
+      <Alert
+        message="Caution: Permanent Data Changes Ahead!"
+        description=" 
+        Please be careful as operations on this page will cause permanent changes to the data."
+        type="warning"
+        showIcon
+        closable
+      />
       <div className="flex justify-between">
         <Button
           onClick={handleAdd}

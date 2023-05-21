@@ -17,6 +17,7 @@
     "antd": "^5.5.0",
     "chart.js": "^4.3.0",
     "csvtojson": "^2.0.10",
+    "default-passive-events": "^2.0.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "json-server": "^0.17.3",

@@ -33,6 +33,9 @@ button {
     border: 1px solid transparent;
   }
   th {
+    // border-right: 1px rgba(0, 0, 80, 0.2) solid;
+    border-bottom: 1px rgba(0, 0, 80, 0.2) solid;
+    background-color: rgba(0, 32, 80, 0.05);
   }
 
   .editable-cell {
@@ -55,7 +58,7 @@ button {
   }
 }
 .btn {
-  @apply bg-blue-950 hover:bg-blue-600 active:bg-violet-900 focus:outline-none focus:ring focus:ring-violet-300 text-blue-50 rounded-3xl p-2 px-4;
+  @apply bg-blue-950 hover:bg-blue-600 active:bg-violet-900 focus:outline-none focus:ring focus:ring-violet-300 text-blue-50 rounded-3xl py-3 px-8;
   width: fit-content;
 }
 

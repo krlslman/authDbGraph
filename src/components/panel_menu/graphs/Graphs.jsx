@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import BarChart from './BarChart';
 import LineChart from './LineChart';
 import PieChart from './PieChart';
-import JsonData from '../../../data/data.json';
+// import JsonData from '../../../data/data.json';
+import { useStateContext } from '@/context/StateContext';
 import { Slider } from 'antd';
 
 const Graphs = () => {
+  const { dataSource, filteredDataSource } = useStateContext();
+  let JsonData = filteredDataSource;
   const [userData, setUserData] = useState(null);
-  const [sliderValue, setSliderValue] = useState([10, 20]);
+  const [sliderValue, setSliderValue] = useState([5, 40]);
 
   useEffect(() => {
     if (JsonData) {
@@ -47,7 +50,7 @@ const Graphs = () => {
         value={sliderValue}
         onChange={handleSliderChange}
         max={JsonData.length}
-        min={10}
+        min={0}
       />
       <div className="flex">
         <div className="w-1/2">

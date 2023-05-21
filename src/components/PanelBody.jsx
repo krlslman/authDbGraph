@@ -30,10 +30,10 @@ const panelItems = [
   getItem("Home", "id_home", <HomeOutlined />),
   getItem("Data", "id_data", <BarChartOutlined />),
   getItem("Graphs", "id_graphs", <BarChartOutlined />),
-  getItem("Dropdown Menu", "id_dropdown", <DropboxOutlined />, [
-    getItem("Menu1", "id_dropdown_sub1"),
-    getItem("Menu2", "id_dropdown_sub2"),
-  ]),
+  // getItem("Dropdown Menu", "id_dropdown", <DropboxOutlined />, [
+  //   getItem("Menu1", "id_dropdown_sub1"),
+  //   getItem("Menu2", "id_dropdown_sub2"),
+  // ]),
 ];
 
 const PanelBody = () => {
@@ -150,8 +150,8 @@ const PanelBody = () => {
           {selectedItem.key == "id_home" && <Home />}
           {selectedItem.key == "id_data" && <ListTabsofData />}
           {selectedItem.key == "id_graphs" && <Graphs />}
-          {selectedItem.key == "id_dropdown_sub1" && <div>id_dropdown_sub1 content</div>}
-          {selectedItem.key == "id_dropdown_sub2" && <div>id_dropdown_sub2 content</div> }
+          {/* {selectedItem.key == "id_dropdown_sub1" && <div>id_dropdown_sub1 content</div>}
+          {selectedItem.key == "id_dropdown_sub2" && <div>id_dropdown_sub2 content</div> } */}
         </Content>
 
         <Footer

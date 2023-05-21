@@ -1,6 +1,6 @@
 import { Tabs } from "antd";
 import PageDataTable from "./tab_data_table/page";
-import PageEditData from "./tab_import_export/page";
+import PageEditData from "./tab_edit_data/page";
 
 const items = [
   {
