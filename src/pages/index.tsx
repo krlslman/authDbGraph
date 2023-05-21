@@ -24,8 +24,8 @@ export default function Home() {
           {/* { user && <Membersonly /> } */}
           {/* <h1 className='text-9xl text-center'>TEST</h1> */}
           <LandingPage />
-          {/* { !user && <div>ankara</div> }
-          { user && <div>ankara</div>} */}
+          { user == undefined && <div className='text-9xl'>istanbul</div> }
+          { user && <div className='text-9xl'>ankara</div>}
       </main>
     </>
   )
