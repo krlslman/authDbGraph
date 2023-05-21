@@ -7,8 +7,8 @@ import Membersonly from './membersonly'
 
 export default function Home() {
   const { user, error, isLoading } = useUser();
-  // if (isLoading) return <div>Loading...</div>
-  // if (error) return <div>{error.message}</div>
+  if (isLoading) return <div>Loading...</div>
+  if (error) return <div>{error.message}</div>
   
   return (
     <>
@@ -20,12 +20,8 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd/dist/antd.min.css" />
       </Head>
       <main>
-          {/* { !user && <LandingPage /> } */}
-          {/* { user && <Membersonly /> } */}
-          {/* <h1 className='text-9xl text-center'>TEST</h1> */}
-          <LandingPage />
-          { user == undefined && <div className='text-9xl'>istanbul</div> }
-          { user && <div className='text-9xl'>ankara</div>}
+          { !user && user == undefined && <LandingPage /> }
+          { user && <Membersonly /> }
       </main>
     </>
   )
