@@ -7,3 +7,7 @@ export default handleAuth();
 //  /api/auth/callback: The route Auth0 will redirect the user to after a successful login.
 //  /api/auth/me: The route to fetch the user profile from.
 
+webAuth = new auth0.WebAuth({
+    domain: 'https://auth-db-graph.vercel.app',
+    clientID: process.env.AUTH0_CLIENT_ID
+  });
