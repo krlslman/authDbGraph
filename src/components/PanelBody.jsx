@@ -3,15 +3,17 @@ import {
   HomeOutlined,
   BarChartOutlined,
   DropboxOutlined,
-  UserOutlined
+  UserOutlined,
+  LogoutOutlined,
+  DownOutlined,
 } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu, Avatar } from "antd";
+import { Breadcrumb, Layout, Menu, Avatar, Dropdown, Space } from "antd";
 import Home from "./panel_menu/home/Home";
 import Graphs from "./panel_menu/graphs/Graphs";
 import ListTabsofData from "./panel_menu/data_menu/tab";
 import Image from "next/image";
-import Link from 'next/link'; //
-
+import Link from 'next/link';
+import { useUser } from '@auth0/nextjs-auth0/client';
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -33,6 +35,7 @@ const panelItems = [
 ];
 
 const PanelBody = () => {
+  const { user, error, isLoading } = useUser();
   const [collapsed, setCollapsed] = useState(false);
 
   const [selectedKey, setSelectedKey] = useState("id_home");
@@ -107,9 +110,15 @@ const PanelBody = () => {
           className="site-layout-background flex justify-end items-center"
           style={{ padding: 0, }} >
             <div className="flex items-center gap-2 pr-2 lg:pr-5">
-              <h6 className="text-white">John Doe</h6>
-              <Link className="text-white" href="/api/auth/logout">logout</Link>
-              <Avatar size="large" icon={<UserOutlined />} />
+              <div className="flex items-center gap-1">
+                <h6 className="text-slate-400">{user.name}</h6>
+                <Link className="text-red-500 pb-1" href="/api/auth/logout"><LogoutOutlined /></Link>
+              </div>
+              
+              { user.picture
+              // eslint-disable-next-line @next/next/no-img-element
+              ? <img src={user.picture} alt="" style={{maxHeight:"50px", borderRadius:"999px"}}/>
+              : <Avatar size="large" icon={<UserOutlined />} /> }
             </div>
         </Header>
         <Content

@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-// import styles from '@/styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
 import { useUser } from '@auth0/nextjs-auth0/client'
 import LandingPage from '../components/LandingPage'
-import PanelBody from '../components/PanelBody'
+import Membersonly from './membersonly'
 
 export default function Home() {
   const { user, error, isLoading } = useUser();
@@ -22,7 +21,7 @@ export default function Home() {
       </Head>
       <main>
           { !user && <LandingPage /> }
-          { user && <PanelBody /> }
+          { user && <Membersonly /> }
       </main>
     </>
   )

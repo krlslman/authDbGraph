@@ -6,10 +6,10 @@ import { StateContextProvider } from '../context/StateContext';
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
 
   return (
-      <StateContextProvider >
-        <UserProvider>
-          <Component {...pageProps} />
-        </UserProvider>
+    <UserProvider>
+      <StateContextProvider>
+        <Component {...pageProps} />
       </StateContextProvider>
+    </UserProvider>
   );
 }

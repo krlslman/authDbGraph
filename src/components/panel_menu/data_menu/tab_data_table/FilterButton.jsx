@@ -42,7 +42,7 @@ const FilterButton = () => {
   return (
     <>
     <Dropdown overlay={menuFilterWarehouse} trigger={["click"]}>
-        <Button>
+        <Button className='btn-primary'>
         Warehouse Filter <FilterOutlined />
         </Button>
     </Dropdown>
