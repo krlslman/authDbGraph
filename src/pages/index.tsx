@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 // import { useUser } from '@auth0/nextjs-auth0/client'
 // import LandingPage from '../components/LandingPage'
-// import Membersonly from './membersonly'
+import Membersonly from './membersonly'
 
 export default function Home() {
   // const { user, error, isLoading } = useUser();
@@ -23,6 +23,7 @@ export default function Home() {
           {/* { !user && <LandingPage /> } */}
           {/* { user && <Membersonly /> } */}
           <h1 className='text-9xl text-center'>TEST</h1>
+          <Membersonly />
       </main>
     </>
   )
