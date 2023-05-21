@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import * as XLSX from "xlsx";
-import { Button, Upload } from "antd";
+import { Button, Upload, message } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { useStateContext } from "/src/context/StateContext";
+import { csv } from 'csvtojson';
+
 
 const ImportFileButton = () => {
   const { dataSource, setDataSource, setFilteredDataSource } = useStateContext();
@@ -12,45 +13,21 @@ const ImportFileButton = () => {
     try {
       let data;
       if (
-        fileExtension.includes(".xlsx") ||
-        fileExtension.includes(".xls") ||
         fileExtension.includes(".csv")
       ) {
-        data = await readExcel(file);
+        data = await readCsv(file);
       } else if (fileExtension.includes(".json")) {
         data = await readJSON(file);
       } else {
-        console.error("Unsupported file format");
+        message.info("Unsupported file format");
         return;
       }
-      // Do something with the parsed data, for example, update the dataSource state
       setFilteredDataSource(data);
       setDataSource(data);
     } catch (error) {
       console.error("Error parsing file:", error);
     }
   };
-
-  const readExcel = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsArrayBuffer(file);
-
-      fileReader.onload = (e) => {
-        const bufferArray = e.target.result;
-        const wb = XLSX.read(bufferArray, { type: "buffer" });
-        const wsname = wb.SheetNames[0];
-        const ws = wb.Sheets[wsname];
-        const data = XLSX.utils.sheet_to_json(ws);
-        resolve(data);
-      };
-
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
-  };
-
   const readJSON = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -64,7 +41,28 @@ const ImportFileButton = () => {
       reader.readAsText(file);
     });
   };
-
+  const readCsv = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const csvData = e.target.result;
+        csv()
+          .fromString(csvData)
+          .then((jsonData) => {
+            resolve(jsonData);
+          })
+          .catch((error) => {
+            console.error('Error converting CSV to JSON:', error);
+            reject(error);
+          });
+      };
+      reader.onerror = (error) => {
+        console.error('Error reading CSV file:', error);
+        reject(error);
+      };
+      reader.readAsText(file);
+    });
+  };
   const beforeUpload = (file) => {
     handleFileUpload(file);
     return false; // Prevent default upload behavior
@@ -74,7 +72,7 @@ const ImportFileButton = () => {
     <div className="">
       <Upload beforeUpload={beforeUpload} maxCount={1}>
         <Button icon={<UploadOutlined />}>
-          Select File [xls - csv - json]
+          Select File [csv - json]
         </Button>
 
       </Upload>

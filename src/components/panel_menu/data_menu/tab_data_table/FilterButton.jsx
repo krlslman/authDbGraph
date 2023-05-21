@@ -16,7 +16,7 @@ const FilterButton = () => {
 
   const handleFilterWarehouse = (filter) => {
         setFilterWarehouse(filter);
-        const i = filteredDataSource.filter((item) => item.warehouse.includes(filter));
+        const i = dataSource.filter((item) => item.warehouse.includes(filter));
         setFilteredDataSource(i);
     }
     const handleClearFilter = () => {

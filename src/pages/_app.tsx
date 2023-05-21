@@ -1,5 +1,5 @@
 import { UserProvider } from '@auth0/nextjs-auth0/client';
-import '@/styles/globals.css';
+import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { StateContextProvider } from '../context/StateContext';
 

@@ -19,11 +19,7 @@ const DownloadTestDataModal = ({ visible, onClose }) => {
       style={{maxWidth:"fit-content"}}
     >
       <div className="flex flex-col gap-2">
-        <div className=''>
-            <Button onClick={() => handleDownload('xlsx')} type="primary" className='text-blue-500' >
-            Download as XLSX
-            </Button>
-        </div>
+        Download these files to import here for test purposes. 
         <div>
             <Button onClick={() => handleDownload('csv')} type="primary" className='text-blue-500' >
             Download as CSV

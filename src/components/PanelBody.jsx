@@ -5,13 +5,15 @@ import {
   DropboxOutlined,
   UserOutlined,
   LogoutOutlined,
-  DownOutlined,
+  CaretDownOutlined,
+  FolderOpenOutlined,
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu, Avatar, Dropdown, Space } from "antd";
 import Home from "./panel_menu/home/Home";
 import Graphs from "./panel_menu/graphs/Graphs";
 import ListTabsofData from "./panel_menu/data_menu/tab";
 import Image from "next/image";
+import LogoSvg from './LogoSvg'
 import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0/client';
 const { Header, Content, Footer, Sider } = Layout;
@@ -59,6 +61,16 @@ const PanelBody = () => {
     }
   };
 
+  const profileItems = [
+    {
+      label: <Link className="flex items-center gap-2" href="/api/auth/logout"><LogoutOutlined className="text-red-600"/>Logout</Link>,
+      key: '0',
+    },
+    {
+      type: 'divider',
+    },
+  ];
+
   return (
     <Layout
       style={{
@@ -79,14 +91,7 @@ const PanelBody = () => {
             alignItems: "center",
           }}
         >
-          <Image
-            className=""
-            src="/assets/logo_s.png"
-            alt="Vite Logo"
-            height={80}
-            width={70}
-            style={{ objectFit: "contain" }}
-          />
+          <LogoSvg />
         </div>
         <p
           className="px-2"
@@ -107,37 +112,48 @@ const PanelBody = () => {
 
       <Layout className="site-layout">
         <Header
-          className="site-layout-background flex justify-end items-center"
+          className="site-layout-background flex justify-between items-center"
           style={{ padding: 0, }} >
+              <Breadcrumb>
+                <Breadcrumb.Item  className="text-slate-600 pl-5 flex items-center gap-1">
+                  <FolderOpenOutlined />{selectedItem ? selectedItem.label : "..."}
+                </Breadcrumb.Item>
+              </Breadcrumb>
             <div className="flex items-center gap-2 pr-2 lg:pr-5">
-              <div className="flex items-center gap-1">
-                <h6 className="text-slate-400">{user.name}</h6>
-                <Link className="text-red-500 pb-1" href="/api/auth/logout"><LogoutOutlined /></Link>
-              </div>
+                <Dropdown
+                  menu={{
+                    items: profileItems
+                  }}
+                  trigger={['click']}
+                >
+                  <a onClick={(e) => e.preventDefault()}>
+                    <Space className="text-slate-400">
+                      {user?user.name:"User"}
+                      { user.picture
+                      // eslint-disable-next-line @next/next/no-img-element
+                      ? <img src={user.picture} alt="" style={{maxHeight:"40px", borderRadius:"999px"}}/>
+                      : <Avatar size="large" icon={<UserOutlined />} /> }
+                      <CaretDownOutlined className="text-slate-400"/>
+                    </Space>
+                  </a>
+                </Dropdown>
               
-              { user.picture
-              // eslint-disable-next-line @next/next/no-img-element
-              ? <img src={user.picture} alt="" style={{maxHeight:"50px", borderRadius:"999px"}}/>
-              : <Avatar size="large" icon={<UserOutlined />} /> }
             </div>
         </Header>
+
         <Content
           style={{
             margin: "0 16px",
           }}
         >
-          <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>
-              {selectedItem ? selectedItem.label : "..."}
-            </Breadcrumb.Item>
-          </Breadcrumb>
+          
           {selectedItem.key == "id_home" && <Home />}
           {selectedItem.key == "id_data" && <ListTabsofData />}
           {selectedItem.key == "id_graphs" && <Graphs />}
           {selectedItem.key == "id_dropdown_sub1" && <div>id_dropdown_sub1 content</div>}
           {selectedItem.key == "id_dropdown_sub2" && <div>id_dropdown_sub2 content</div> }
         </Content>
+
         <Footer
           style={{
             textAlign: "center",

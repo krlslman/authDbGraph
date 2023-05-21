@@ -110,6 +110,7 @@ const DataTable = () => {
   return (
     <div>
       <Table
+        id="main_table"
         columns={columns}
         dataSource={filteredDataSource}
         size="small"

@@ -82,7 +82,7 @@ const AboveTable = () => {
         </div>
 
         <div className="flex gap-2 m-2">
-          <div className="asd">
+          <div className="flex gap-2">
             <Button
               type="default"
               shape="round"
@@ -94,6 +94,7 @@ const AboveTable = () => {
               Save
             </Button>
             <Button
+              className="bg-gray-600 text-white border-none"
               type="default"
               shape="round"
               icon={<DownloadOutlined />}
@@ -104,6 +105,7 @@ const AboveTable = () => {
             </Button>
           </div>
             <Button
+                className="bg-gray-600 text-white border-none"
                 type="default"
                 shape="round"
                 icon={<DownloadOutlined />}

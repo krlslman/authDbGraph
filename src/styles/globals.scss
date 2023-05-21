@@ -110,6 +110,24 @@ a {
   }
 } */
 
+#logo {
+  fill: #1890FF;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  stroke: rgb(255, 255, 255, .5);
+  stroke-width: 6px;
+}
+#main_table {
+  thead {
+    white-space: nowrap;
+    th {
+      border-right: 1px rgba(0, 0, 80, 0.2) solid;
+      border-bottom: 1px rgba(0, 0, 80, 0.2) solid;
+      background-color: rgba(0, 32, 80, 0.123);
+    }
+  }
+}
 .btn {
   @apply bg-blue-950 hover:bg-blue-600 active:bg-violet-900 focus:outline-none focus:ring focus:ring-violet-300 text-blue-50 rounded-3xl p-2 px-4;
   width: fit-content;
