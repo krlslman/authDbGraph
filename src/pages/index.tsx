@@ -1,14 +1,14 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
-import { useUser } from '@auth0/nextjs-auth0/client'
-import LandingPage from '../components/LandingPage'
-import Membersonly from './membersonly'
+// import { useUser } from '@auth0/nextjs-auth0/client'
+// import LandingPage from '../components/LandingPage'
+// import Membersonly from './membersonly'
 
 export default function Home() {
-  const { user, error, isLoading } = useUser();
-  if (isLoading) return <div>Loading...</div>
-  if (error) return <div>{error.message}</div>
+  // const { user, error, isLoading } = useUser();
+  // if (isLoading) return <div>Loading...</div>
+  // if (error) return <div>{error.message}</div>
   
   return (
     <>
@@ -20,8 +20,9 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd/dist/antd.min.css" />
       </Head>
       <main>
-          { !user && <LandingPage /> }
-          { user && <Membersonly /> }
+          {/* { !user && <LandingPage /> } */}
+          {/* { user && <Membersonly /> } */}
+          <h1 className='text-9xl text-center'>TEST</h1>
       </main>
     </>
   )

@@ -1,16 +1,16 @@
-import React from 'react'
-import { withPageAuthRequired } from '@auth0/nextjs-auth0'
-import PanelBody from '../../components/PanelBody'
+// import React from 'react'
+// import { withPageAuthRequired } from '@auth0/nextjs-auth0'
+// import PanelBody from '../../components/PanelBody'
 
-type Props = {}
+// type Props = {}
 
-const Membersonly = (props: Props) => {
-  return (
-    <>
-      <PanelBody />
-    </>
-  )
-}
+// const Membersonly = (props: Props) => {
+//   return (
+//     <>
+//       <PanelBody />
+//     </>
+//   )
+// }
 
-export default Membersonly
-export const getServerSideProps = withPageAuthRequired();
+// export default Membersonly
+// export const getServerSideProps = withPageAuthRequired();
