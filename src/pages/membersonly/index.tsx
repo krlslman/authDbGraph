@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react'
 // import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 // import PanelBody from '../../components/PanelBody'
 
@@ -13,5 +13,5 @@ const Membersonly = (props: Props) => {
   )
 }
 
-// export default Membersonly
+export default Membersonly
 // export const getServerSideProps = withPageAuthRequired();
