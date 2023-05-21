@@ -1,4 +1,4 @@
-id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transfer,monthly-last-stock,monthly-last-sit
+id,warehouse,city,basedist,currentdist,stock,order,allowance,ord_alw_diff,transfer,monthly_last_stock,monthly_last_sit
 1,LVMH Fragrance Brands CSV,Shentong,0.12,0.23,2394,4270,2191,2079,262,329,0
 2,McKesson,Bidya,0.3,0.08,677,3583,1263,2320,1693,102,9
 3,Mylan Pharmaceuticals Inc.,Tadine,0.16,0.09,1073,3182,2557,625,1919,2347,27
@@ -18,14 +18,14 @@ id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transf
 17,Lake Erie Medical & Surgical Supply DBA Quality Care Products LLC,Lajeado,0.14,0.31,1540,4980,419,4561,381,2771,29
 18,"Excellium Pharmaceutical, Inc",Strasbourg,0.25,0.3,1416,4075,674,3401,2359,3893,27
 19,L. Perrigo Company,Chenda,0.13,0.2,2916,2690,1288,1402,2277,2783,13
-20,Cardinal Health,Nombre de Jesús,0.21,0.32,445,1465,783,682,433,936,30
+20,Cardinal Health,Nombre de Jesï¿½s,0.21,0.32,445,1465,783,682,433,936,30
 21,"Lil' Drug Store Products, Inc",Sumberkrajan,0.02,0.14,2933,1033,2276,-1243,657,2679,0
 22,"Physicians Total Care, Inc.",Gaplokan,0.21,0.05,1442,457,1240,-783,1954,2557,20
 23,Dr. Reddy's Laboratories Inc,Yangzhuang,0.32,0.16,562,4088,663,3425,2871,2470,0
 24,Midlothian Laboratories,Jukui,0.25,0.21,1608,4458,2741,1717,899,384,27
 25,Unifirst First Aid Corporation,Kunmi Erdi,0.25,0.14,1622,2777,1097,1680,1389,985,20
 26,"Ventura Corporation (San Juan, P.R)",Melekeok Village,0.27,0.1,2093,3390,2879,511,1349,824,14
-27,"Physicians Total Care, Inc.",Orléans,0.23,0.29,2437,860,1704,-844,507,1527,30
+27,"Physicians Total Care, Inc.",Orlï¿½ans,0.23,0.29,2437,860,1704,-844,507,1527,30
 28,Unit Dose Services,Naberera,0.15,0.21,173,1735,1682,53,599,3754,14
 29,"GOWOONSESANG COSMETICS CO., LTD.",Riyue,0.13,0.23,2298,1658,483,1175,2474,1604,20
 30,Teva Pharmaceuticals USA Inc,Buan,0.18,0.27,2456,2377,1905,472,929,730,29
@@ -39,12 +39,12 @@ id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transf
 38,Ther-Rx Corporation,Gainesville,0.28,0.03,1133,3819,2124,1695,1070,3714,32
 39,"EMD Serono, Inc.",Nakhon Nayok,0.04,0.05,1497,2636,2889,-253,2877,3151,14
 40,American Health Packaging,Kagawasan,0.14,0.27,1673,2217,2351,-134,1067,2114,30
-41,"Nelco Laboratories, Inc.",Qu?nh Côi,0.33,0.24,136,959,2435,-1476,1719,2202,32
+41,"Nelco Laboratories, Inc.",Qu?nh Cï¿½i,0.33,0.24,136,959,2435,-1476,1719,2202,32
 42,A-S Medication Solutions LLC,Suklayin,0.12,0.05,778,4260,646,3614,1045,2281,6
-43,Conopco Inc. d/b/a Unilever,Rafaï,0.34,0.22,1942,72,1157,-1085,1994,2237,15
+43,Conopco Inc. d/b/a Unilever,Rafaï¿½,0.34,0.22,1942,72,1157,-1085,1994,2237,15
 44,"Physicians Total Care, Inc.",Mulyosari,0.23,0.26,606,2038,522,1516,23,3507,14
 45,"Dolgencorp, LLC",Guilhabreu,0.11,0.02,1448,4879,1946,2933,1604,612,6
-46,State of Florida DOH Central Pharmacy,Gävle,0.31,0.31,1420,2653,1714,939,474,1574,5
+46,State of Florida DOH Central Pharmacy,Gï¿½vle,0.31,0.31,1420,2653,1714,939,474,1574,5
 47,Merck Sharp & Dohme Corp.,Hexi,0.33,0.26,1337,1965,1449,516,946,1008,14
 48,Parfums Christian Dior,Al Fuwayliq,0.32,0.2,1765,3065,1889,1176,2288,3690,3
 49,DIRECT RX,Aiguo,0.12,0.03,436,572,2223,-1651,2074,648,18
@@ -63,11 +63,11 @@ id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transf
 62,"Hi-Tech Pharmacal Co., Inc.",Modosinal,0.09,0.03,2479,1350,192,1158,2995,3516,2
 63,"Ventura Corporation (San Juan, P.R)",Ilawa,0.03,0.16,1311,1755,2205,-450,288,1596,16
 64,Combe Incorporated,Nanqiao,0.26,0.25,2501,4137,380,3757,375,823,31
-65,American Health Packaging,Wu’erbu Baolige,0.32,0.24,1185,2036,2504,-468,858,1580,25
+65,American Health Packaging,Wuï¿½erbu Baolige,0.32,0.24,1185,2036,2504,-468,858,1580,25
 66,Walgreen,Bua Yai,0.21,0.17,653,4576,417,4159,1028,3154,32
 67,Global Pharmaceuticals,Kalugmanan,0.27,0.11,584,3951,382,3569,1777,3094,17
 68,"Newton Laboratories, Inc.",Nabeul,0.2,0.24,1678,233,1475,-1242,238,1373,20
-69,AMERICAN SALES COMPANY,Rogachëvo,0.33,0.32,179,3834,2497,1337,2837,2921,14
+69,AMERICAN SALES COMPANY,Rogachï¿½vo,0.33,0.32,179,3834,2497,1337,2837,2921,14
 70,Apotex Corp.,Jiuchenggong,0.06,0.05,1460,596,2728,-2132,1743,1874,0
 71,"ALK-Abello, Inc.",Ruchihe,0.33,0.03,1645,3765,2475,1290,161,1768,31
 72,Parfums Christian Dior,San Nicolas,0.05,0.08,2775,4014,1174,2840,2171,3220,18
@@ -75,18 +75,18 @@ id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transf
 74,Aidarex Pharmaceuticals LLC,Datong,0.32,0.07,1187,960,2420,-1460,800,3646,17
 75,Qualitest Pharmaceuticals,Sombor,0.11,0.27,2226,3291,2020,1271,2068,3292,1
 76,Major Pharmaceuticals,Changyon,0.33,0.24,2684,1929,2642,-713,579,1914,18
-77,Medicis Pharmaceutical Corp,Fushë-Bulqizë,0.27,0.25,1108,858,709,149,258,3171,3
+77,Medicis Pharmaceutical Corp,Fushï¿½-Bulqizï¿½,0.27,0.25,1108,858,709,149,258,3171,3
 78,Unit Dose Services,Naranjo,0.03,0.14,2646,2212,2072,140,394,3992,20
-79,B. Braun Medical Inc.,Dalmacio Vélez Sársfield,0.29,0.29,1575,4569,339,4230,1507,2411,1
+79,B. Braun Medical Inc.,Dalmacio Vï¿½lez Sï¿½rsfield,0.29,0.29,1575,4569,339,4230,1507,2411,1
 80,REMEDYREPACK INC.,Kosmach,0.07,0.3,2431,1408,2910,-1502,1203,3080,23
 81,Rebel Distributors Corp,Waepana,0.29,0.2,1773,4671,1823,2848,2423,1514,20
 82,REMEDYREPACK INC.,Ribnica na Pohorju,0.24,0.17,833,4109,1421,2688,2745,785,13
-83,Kroger Company,Zürich,0.17,0.15,92,3599,920,2679,953,3622,0
-84,Meijer,Paraíso,0.27,0.09,1548,4153,2128,2025,2448,1842,31
+83,Kroger Company,Zï¿½rich,0.17,0.15,92,3599,920,2679,953,3622,0
+84,Meijer,Paraï¿½so,0.27,0.09,1548,4153,2128,2025,2448,1842,31
 85,REMEDYREPACK INC.,Ninghai,0.27,0.04,2856,3006,625,2381,2823,2746,14
-86,"Exelan Pharmaceuticals, Inc.",Curumaní,0.24,0.19,1010,3783,2385,1398,431,382,14
+86,"Exelan Pharmaceuticals, Inc.",Curumanï¿½,0.24,0.19,1010,3783,2385,1398,431,382,14
 87,"Actavis Pharma, Inc.",Rayong,0.15,0.29,2264,571,2954,-2383,32,3517,29
-88,"Watson Laboratories, Inc.",San Manuel Chaparrón,0.29,0.2,1291,1070,1554,-484,155,3963,23
+88,"Watson Laboratories, Inc.",San Manuel Chaparrï¿½n,0.29,0.2,1291,1070,1554,-484,155,3963,23
 89,Glenmark Generics Inc. USA,Wreczyca Wielka,0.27,0.1,1358,1031,2113,-1082,119,343,0
 90,Walgreen Co,Pancevo,0.08,0.1,1841,4821,991,3830,2198,2480,4
 91,The Kroger Company,Las Palmas,0.08,0.05,2823,2766,625,2141,2503,2076,18
@@ -100,10 +100,10 @@ id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transf
 99,Kmart Corporation,Shuangzhu,0.09,0.02,770,2183,2992,-809,245,1669,23
 100,REMEDYREPACK INC.,Wamba,0.31,0.26,1660,142,2527,-2385,1085,3743,21
 101,"Health-Tech, Inc.",Drawno,0.22,0.11,753,515,400,115,2230,1323,29
-102,"Allermed Laboratories, Inc.",São Martinho,0.11,0.03,2181,3321,1071,2250,2569,3590,3
+102,"Allermed Laboratories, Inc.",Sï¿½o Martinho,0.11,0.03,2181,3321,1071,2250,2569,3590,3
 103,"AvKARE, Inc.",Mankono,0.07,0.27,1505,4229,2713,1516,1231,716,30
 104,Cardinal Health,Ourozinho,0.05,0.3,2218,2138,1912,226,2029,294,3
-105,Lake Erie Medical & Surgical Supply DBA Qualtiy Care Products LLC,Mocímboa,0.24,0.25,1035,2800,346,2454,742,271,10
+105,Lake Erie Medical & Surgical Supply DBA Qualtiy Care Products LLC,Mocï¿½mboa,0.24,0.25,1035,2800,346,2454,742,271,10
 106,Bryant Ranch Prepack,Calango,0.22,0.18,2548,101,112,-11,2434,2538,28
 107,McKesson,Yangdian,0.33,0.21,120,4666,2794,1872,1787,2581,10
 108,Lineage Therapeutics Inc,Snegiri,0.33,0.16,2091,2135,2274,-139,402,2495,14
@@ -112,7 +112,7 @@ id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transf
 111,STAT Rx USA LLC,Gieraltowice,0.05,0.16,1220,2443,371,2072,2067,1488,1
 112,REMEDYREPACK INC.,Tegalgede Kulon,0.26,0.22,2560,1125,2768,-1643,876,664,3
 113,"Aurolife Pharma, LLC",Yangwei,0.07,0.04,1294,823,2351,-1528,1674,3140,6
-114,"Edgemont Pharmaceuticals, LLC",Ágios Spyrídon,0.31,0.3,2889,510,1080,-570,2888,1142,21
+114,"Edgemont Pharmaceuticals, LLC",ï¿½gios Spyrï¿½don,0.31,0.3,2889,510,1080,-570,2888,1142,21
 115,"Menper Distributors, Inc.",Liozon,0.23,0.21,1781,2204,758,1446,479,3297,22
 116,State of Florida DOH Central Pharmacy,Qiaozhuang,0.32,0.03,828,3734,1597,2137,1252,181,21
 117,Geri-Care Pharmaceutical Corp,Kikerino,0.31,0.05,1992,4087,1502,2585,272,626,29
@@ -121,7 +121,7 @@ id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transf
 120,"Altura Pharmaceuticals, Inc.",Longfengba,0.08,0.12,2843,1436,2754,-1318,22,2746,16
 121,"Stratus Pharmaceuticals, Inc",Bonriki Village,0.24,0.23,2608,3887,89,3798,2468,753,5
 122,REMEDYREPACK INC.,Lincoln,0.06,0.28,2723,1916,1171,745,2293,2737,2
-123,P.S.W. INC.,‘Arad,0.11,0.1,379,4944,1130,3814,2727,2434,4
+123,P.S.W. INC.,ï¿½Arad,0.11,0.1,379,4944,1130,3814,2727,2434,4
 124,Bryant Ranch Prepack,Rueil-Malmaison,0.31,0.29,1514,1779,1203,576,1690,169,20
 125,Virtus Pharmaceuticals,Passal,0.23,0.27,1340,2083,1457,626,769,1508,25
 126,"Wal-Mart Stores, Inc",Butha-Buthe,0.25,0.11,881,4327,685,3642,2960,1180,1
@@ -129,30 +129,30 @@ id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transf
 128,Mayne Pharma,Zakhu,0.02,0.21,2956,2563,2601,-38,895,3846,12
 129,WALGREENS,Vimieiro,0.19,0.05,1903,681,1900,-1219,1844,166,15
 130,"CorePharma, LLC",Santa Clara,0.31,0.03,1146,3842,192,3650,304,3398,31
-131,"Exelan Pharmaceuticals, Inc.",Arauá,0.27,0.05,1342,3543,727,2816,1993,507,8
+131,"Exelan Pharmaceuticals, Inc.",Arauï¿½,0.27,0.05,1342,3543,727,2816,1993,507,8
 132,"Meijer Distribution, Inc",Yaohua,0.04,0.22,1335,4240,917,3323,1325,1255,25
 133,Topco Associates LLC,Dioknisi,0.08,0.14,2655,1086,2551,-1465,1779,1455,30
 134,Lake Erie Medical & Surgical Supply DBA Quality Care Products LLC,Bancar,0.11,0.28,1941,3066,1733,1333,735,3169,31
 135,"AFFLABS, Affiliated Laboratories, A Division of AFFLINK",Nyuzen,0.28,0.2,1300,192,1900,-1708,1327,2986,1
-136,Major Pharmaceuticals,Huai’an,0.25,0.29,2295,1767,1624,143,413,677,22
+136,Major Pharmaceuticals,Huaiï¿½an,0.25,0.29,2295,1767,1624,143,413,677,22
 137,STERIS Corporation,Nueva Italia,0.32,0.11,1461,2636,1633,1003,911,3438,0
 138,Major Pharmaceuticals,Atamyrat,0.25,0.1,833,742,754,-12,1351,3990,31
 139,"PSS World Medical, Inc.",Aconibe,0.24,0.15,148,3082,469,2613,849,1086,11
 140,"Preferred Pharmaceuticals, Inc.",Koceni,0.11,0.32,557,702,2480,-1778,1071,3275,13
 141,Perrigo New York Inc,Svetlyy Yar,0.03,0.17,1656,4619,1233,3386,1472,531,3
-142,Sanum-Kehlbeck GmbH & Co. KG,Skála,0.09,0.26,1404,1100,499,601,349,1436,31
+142,Sanum-Kehlbeck GmbH & Co. KG,Skï¿½la,0.09,0.26,1404,1100,499,601,349,1436,31
 143,CVS Pharmacy,Patsi,0.05,0.05,1903,2386,1698,688,737,3012,15
-144,"SJ Creations, Inc.",Kokemäki,0.26,0.21,1020,4797,1735,3062,1423,3334,27
+144,"SJ Creations, Inc.",Kokemï¿½ki,0.26,0.21,1020,4797,1735,3062,1423,3334,27
 145,James Alexander Corporation,Kluczbork,0.08,0.2,2369,3805,2089,1716,1072,895,21
-146,"Nelco Laboratories, Inc.",‘Awarta,0.03,0.22,2611,4471,2260,2211,448,3224,31
-147,"Larken Laboratories, Inc.",Kájov,0.19,0.25,1866,991,1058,-67,2916,1240,17
-148,"PD-Rx Pharmaceuticals, Inc.",Piña,0.2,0.05,2005,4579,2343,2236,723,2190,24
+146,"Nelco Laboratories, Inc.",ï¿½Awarta,0.03,0.22,2611,4471,2260,2211,448,3224,31
+147,"Larken Laboratories, Inc.",Kï¿½jov,0.19,0.25,1866,991,1058,-67,2916,1240,17
+148,"PD-Rx Pharmaceuticals, Inc.",Piï¿½a,0.2,0.05,2005,4579,2343,2236,723,2190,24
 149,SUPERVALU INC.,Buenavista,0.04,0.11,337,2574,1575,999,2459,3839,31
 150,"Fruit of the Earth, Inc.",Jincheng,0.13,0.02,2723,3165,509,2656,2595,2105,20
 151,T-Gone Remedies,Manwakh,0.27,0.05,773,2431,296,2135,1339,3481,0
 152,"Duramed Pharmaceuticals, Inc.",Danchang,0.3,0.12,2988,4869,328,4541,812,2699,15
 153,STERIS Corporation,Tianqian,0.34,0.32,2875,511,2150,-1639,223,2314,2
-154,H E B,Vsetín,0.34,0.22,1813,1415,1525,-110,1867,184,8
+154,H E B,Vsetï¿½n,0.34,0.22,1813,1415,1525,-110,1867,184,8
 155,American Sales Company,Apopa,0.08,0.15,1452,885,670,215,1065,887,22
 156,"Ningbo Dowland Daily Health Co., Ltd",Ortigueira,0.08,0.03,697,741,2991,-2250,2216,840,29
 157,Aidarex Pharmaceuticals LLC,Ticrapo,0.18,0.11,296,531,1494,-963,1368,678,5
@@ -161,20 +161,20 @@ id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transf
 160,DZA Brands LLC,Qizhen,0.06,0.04,1588,4805,1905,2900,2585,2933,24
 161,Cardinal Health,Sinait,0.25,0.15,2128,4591,2178,2413,336,2116,31
 162,A-S Medication Solutions LLC,Staryy Togul,0.11,0.1,1467,4090,1111,2979,1298,1477,14
-163,SAM'S WEST INC.,Quintãs,0.09,0.19,1427,871,2182,-1311,1468,1122,25
+163,SAM'S WEST INC.,Quintï¿½s,0.09,0.19,1427,871,2182,-1311,1468,1122,25
 164,Family Dollar (FAMILY WELLNESS),Anau,0.19,0.24,2949,4524,2524,2000,2951,1380,24
-165,Mylan Institutional LLC,Mi’ersi,0.29,0.03,1364,3969,986,2983,2167,3242,8
+165,Mylan Institutional LLC,Miï¿½ersi,0.29,0.03,1364,3969,986,2983,2167,3242,8
 166,"Antigen Laboratories, Inc.",Paracuru,0.31,0.1,1476,3188,2007,1181,2656,3923,23
 167,Kramer Novis,Jinbi,0.21,0.05,81,3187,1409,1778,857,1613,4
-168,"KATE SOMERVILLE SKINCARE, LLC",Maracás,0.29,0.11,1768,562,914,-352,324,1860,6
-169,American Health Packaging,Nevyts’ke,0.15,0.04,821,211,1200,-989,1853,3159,27
+168,"KATE SOMERVILLE SKINCARE, LLC",Maracï¿½s,0.29,0.11,1768,562,914,-352,324,1860,6
+169,American Health Packaging,Nevytsï¿½ke,0.15,0.04,821,211,1200,-989,1853,3159,27
 170,Amerisource Bergen,Alcanena,0.04,0.18,188,2989,106,2883,1241,2003,19
 171,Caldwell Consumer Health LLC,Taekas,0.26,0.22,2722,1505,2102,-597,1485,1963,9
 172,Haemonetics Corporation,Maebaru,0.16,0.16,899,319,2230,-1911,690,3730,31
 173,Deseret Biologicals,Annotto Bay,0.19,0.16,245,1363,1894,-531,1602,1738,3
 174,"Papermates, Inc. dba Noteworthy",Siikajoki,0.23,0.25,1285,2602,1015,1587,2786,2568,24
 175,McKesson,Cikijing,0.23,0.24,1291,1959,2006,-47,2522,1323,22
-176,Bryant Ranch Prepack,Kovárov,0.22,0.22,1968,1474,1164,310,2525,3148,9
+176,Bryant Ranch Prepack,Kovï¿½rov,0.22,0.22,1968,1474,1164,310,2525,3148,9
 177,TYA Pharmaceuticals,Ban Talat Bueng,0.33,0.22,1312,1569,1955,-386,323,467,10
 178,"Roxane Laboratories, Inc.",Sumuranyar,0.27,0.17,1215,4095,166,3929,1086,2211,16
 179,AMOREPACIFIC,E? ?aiyiba,0.16,0.14,84,2482,833,1649,1004,449,8
@@ -182,9 +182,9 @@ id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transf
 181,"American Regent, Inc.",Balugo,0.25,0.21,1355,660,1717,-1057,2370,2529,10
 182,"Matrixx Initiatives, Inc.",Celso Ramos,0.16,0.16,2490,3440,2765,675,2992,1783,26
 183,McKesson Packaging Services a business unit of McKesson Corporation,Shuishaping,0.1,0.03,2515,4223,1583,2640,2671,2671,23
-184,PureLife Dental,Los Córdobas,0.32,0.3,932,1071,169,902,1585,781,9
+184,PureLife Dental,Los Cï¿½rdobas,0.32,0.3,932,1071,169,902,1585,781,9
 185,"PD-Rx Pharmaceuticals, Inc.",Cabak Satu,0.19,0.23,650,4299,2221,2078,1114,1025,8
-186,"Eon Labs, Inc.",Bétérou,0.09,0.3,656,1652,2361,-709,723,2664,10
+186,"Eon Labs, Inc.",Bï¿½tï¿½rou,0.09,0.3,656,1652,2361,-709,723,2664,10
 187,"MedVantx, Inc.",Gaohong,0.22,0.17,2354,3694,2059,1635,628,2522,26
 188,Ovelle Ltd,Novoye Leushino,0.26,0.23,2845,422,2071,-1649,2423,3131,5
 189,Natural Health Supply,Erqu,0.27,0.26,1321,1604,1380,224,2240,1337,32
@@ -192,7 +192,7 @@ id,warehouse,city,basedist,currentdist,stock,order,allowance,ord-alw-diff,transf
 191,"Roxane Laboratories, Inc",Oslo,0.2,0.13,1815,3691,2595,1096,914,3199,30
 192,"NUGA MEDICAL CO., LTD.",Hetou,0.12,0.04,2611,4972,1636,3336,1886,3301,21
 193,"Lotus Pharmaceutical Co., Ltd.",Wedangtemu,0.21,0.03,809,2226,162,2064,1502,3719,18
-194,"Ascend Laboratories, LLC",Štore,0.27,0.11,2515,627,2878,-2251,926,407,17
+194,"Ascend Laboratories, LLC",ï¿½tore,0.27,0.11,2515,627,2878,-2251,926,407,17
 195,Health Care Products,Urungpigang,0.17,0.19,1435,336,282,54,2815,174,12
 196,Uriel Pharmacy Inc.,Ulsan,0.14,0.05,2873,4245,1324,2921,1418,1287,6
 197,REMEDYREPACK INC.,Shache,0.33,0.25,1861,3568,1343,2225,725,1540,15

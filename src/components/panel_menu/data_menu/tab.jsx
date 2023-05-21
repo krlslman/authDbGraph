@@ -1,6 +1,6 @@
 import { Tabs } from "antd";
 import PageDataTable from "./tab_data_table/page";
-import PageImportExport from "./tab_import_export/page";
+import PageEditData from "./tab_import_export/page";
 
 const items = [
   {
@@ -13,11 +13,11 @@ const items = [
     ),
   },
   {
-    label: "Import & Export",
+    label: "Edit Data",
     key: "2",
     children: (
       <>
-        <PageImportExport />
+        <PageEditData />
       </>
     ),
   },

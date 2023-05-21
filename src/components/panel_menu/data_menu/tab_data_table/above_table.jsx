@@ -84,18 +84,8 @@ const AboveTable = () => {
         <div className="flex gap-2 m-2">
           <div className="flex gap-2">
             <Button
-              type="default"
-              shape="round"
-              icon={<SaveOutlined />}
-              size={"default"}
-              // onClick={}
-              disabled
-              >
-              Save
-            </Button>
-            <Button
-              className="bg-gray-600 text-white border-none"
-              type="default"
+              className=""
+              type="primary"
               shape="round"
               icon={<DownloadOutlined />}
               size={"default"}
@@ -105,8 +95,8 @@ const AboveTable = () => {
             </Button>
           </div>
             <Button
-                className="bg-gray-600 text-white border-none"
-                type="default"
+                className=""
+                type="primary"
                 shape="round"
                 icon={<DownloadOutlined />}
                 size={"default"}

@@ -11,6 +11,7 @@ const DataTable = () => {
   const columns = [
     { title: "warehouse",
       dataIndex: "warehouse",
+      editable: true,
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm }) => {
         return (
           <Input
@@ -93,16 +94,16 @@ const DataTable = () => {
         dataIndex: "allowance",
     },
     { title: "ord-alw difference",
-        dataIndex: "ord-alw-diff",
+        dataIndex: "ord_alw_diff",
     },
     { title: "transfer",
         dataIndex: "transfer",
     },
     { title: "month end stock",
-        dataIndex: "monthly-last-stock",
+        dataIndex: "monthly_last_stock",
     },
     { title: "month end sit",
-        dataIndex: "monthly-last-sit",
+        dataIndex: "monthly_last_sit",
     },
   ];
 
