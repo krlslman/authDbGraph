@@ -10,45 +10,43 @@ import {
 import LineChart from "../graphs/LineChart";
 import { useStateContext } from "/src/context/StateContext";
 import BarChart from "../graphs/BarChart";
-import TestMongoDb from './TestMongoDb';
-
+import TestMongoDb from "./TestMongoDb";
 
 const Home = () => {
   const { dataSource, filteredDataSource } = useStateContext();
-  const [ homeLineChartData, setHomeLineChartData ] = useState(
-    {
-      labels: dataSource.slice(10,30).map((data) => data.city),
-      datasets: [
-        {
-          label: 'Base Distribution',
-          data: dataSource.slice(10,30).map((data) => data.basedist),
-          backgroundColor: [
-            'rgba(75, 192, 192, 1)',
-            '#ecf0f1',
-            '#50AF95',
-            '#f3ba2f',
-            '#2a71d0',
-          ],
-          borderColor: 'black',
-          borderWidth: 1,
-          tension: 0.4,
-        },{
-          label: 'Current Distribution',
-          data: dataSource.slice(10,30).map((data) => data.currentdist),
-          backgroundColor: [
-            '#13005A',
-            '#00337C',
-            '#1C82AD',
-            '#03C988',
-            '#2a71d0',
-          ],
-          borderColor: 'black',
-          borderWidth: 1,
-          tension: 0.4,
-        },
-      ],
-    }    
-  )
+  const [homeLineChartData, setHomeLineChartData] = useState({
+    labels: dataSource.slice(10, 30).map((data) => data.city),
+    datasets: [
+      {
+        label: "Base Distribution",
+        data: dataSource.slice(10, 30).map((data) => data.basedist),
+        backgroundColor: [
+          "rgba(75, 192, 192, 1)",
+          "#ecf0f1",
+          "#50AF95",
+          "#f3ba2f",
+          "#2a71d0",
+        ],
+        borderColor: "black",
+        borderWidth: 1,
+        tension: 0.4,
+      },
+      {
+        label: "Current Distribution",
+        data: dataSource.slice(10, 30).map((data) => data.currentdist),
+        backgroundColor: [
+          "#13005A",
+          "#00337C",
+          "#1C82AD",
+          "#03C988",
+          "#2a71d0",
+        ],
+        borderColor: "black",
+        borderWidth: 1,
+        tension: 0.4,
+      },
+    ],
+  });
   function DashboardCard({ title, value, icon }) {
     return (
       <Card>
@@ -63,8 +61,9 @@ const Home = () => {
   return (
     <section id="">
       
+
       <TestMongoDb />
-      
+
       <div className="flex gap-5">
         <div className="w-1/2 flex flex-col justify-center">
           <h1 className="text-4xl m-5">Information about this project</h1>
@@ -148,72 +147,71 @@ const Home = () => {
           <button className="my-5 mx-auto btn">Click here</button>
         </div>
         <div className="w-1/2 mt-4">
-        
-        <Space size={20} direction="vertical">
-          <Typography.Title level={4}>Dashboard</Typography.Title>
-          <Space direction="horizontal">
-            <DashboardCard
-              icon={
-                <IssuesCloseOutlined
-                  style={{
-                    color: "green",
-                    backgroundColor: "rgba(0,255,0,0.25)",
-                    borderRadius: 20,
-                    fontSize: 24,
-                    padding: 8,
-                  }}
-                />
-              }
-              title={"Issues"}
-              value={"2412"}
-            />
-            <DashboardCard
-              icon={
-                <CheckCircleOutlined
-                  style={{
-                    color: "blue",
-                    backgroundColor: "rgba(0,0,255,0.25)",
-                    borderRadius: 20,
-                    fontSize: 24,
-                    padding: 8,
-                  }}
-                />
-              }
-              title={"Solved"}
-              value={"1185"}
-            />
-            <DashboardCard
-              icon={
-                <FundProjectionScreenOutlined
-                  style={{
-                    color: "rgb(154, 64, 0)",
-                    backgroundColor: "rgb(253, 202, 59)",
-                    borderRadius: 20,
-                    fontSize: 24,
-                    padding: 8,
-                  }}
-                />
-              }
-              title={"Projects"}
-              value={"911"}
-            />
-            <DashboardCard
-              icon={
-                <DollarCircleOutlined
-                  style={{
-                    color: "green",
-                    backgroundColor: "rgba(0, 255, 89, 0.48)",
-                    borderRadius: 20,
-                    fontSize: 24,
-                    padding: 8,
-                  }}
-                />
-              }
-              title={"Revenue"}
-              value={"21187 $"}
-            />
+          <Space size={20} direction="vertical">
+            <Typography.Title level={4}>Dashboard</Typography.Title>
+            <Space direction="horizontal">
+              <DashboardCard
+                icon={
+                  <IssuesCloseOutlined
+                    style={{
+                      color: "green",
+                      backgroundColor: "rgba(0,255,0,0.25)",
+                      borderRadius: 20,
+                      fontSize: 24,
+                      padding: 8,
+                    }}
+                  />
+                }
+                title={"Issues"}
+                value={"2412"}
+              />
+              <DashboardCard
+                icon={
+                  <CheckCircleOutlined
+                    style={{
+                      color: "blue",
+                      backgroundColor: "rgba(0,0,255,0.25)",
+                      borderRadius: 20,
+                      fontSize: 24,
+                      padding: 8,
+                    }}
+                  />
+                }
+                title={"Solved"}
+                value={"1185"}
+              />
+              <DashboardCard
+                icon={
+                  <FundProjectionScreenOutlined
+                    style={{
+                      color: "rgb(154, 64, 0)",
+                      backgroundColor: "rgb(253, 202, 59)",
+                      borderRadius: 20,
+                      fontSize: 24,
+                      padding: 8,
+                    }}
+                  />
+                }
+                title={"Projects"}
+                value={"911"}
+              />
+              <DashboardCard
+                icon={
+                  <DollarCircleOutlined
+                    style={{
+                      color: "green",
+                      backgroundColor: "rgba(0, 255, 89, 0.48)",
+                      borderRadius: 20,
+                      fontSize: 24,
+                      padding: 8,
+                    }}
+                  />
+                }
+                title={"Revenue"}
+                value={"21187 $"}
+              />
+            </Space>
           </Space>
-        </Space>
 
           <div
             className="testStyling homeImage m-5"

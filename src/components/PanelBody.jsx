@@ -43,8 +43,8 @@ const PanelBody = () => {
   const { user, error, isLoading } = useUser();
   const [collapsed, setCollapsed] = useState(false);
 
-  const [selectedKey, setSelectedKey] = useState("id_home");
-  const [selectedItem, setSelectedItem] = useState(panelItems[0]);
+  const [selectedKey, setSelectedKey] = useState("id_data"); // opening page
+  const [selectedItem, setSelectedItem] = useState(panelItems[1]); // opening active effect
   const { isConnected } = useStateContext();
 
   const handleMenuSelect = ({ key }) => {

@@ -1,6 +1,8 @@
 import { Tabs } from "antd";
 import PageDataTable from "./tab_data_table/page";
 import PageEditData from "./tab_edit_data/page";
+import MongoDBInteractions from './tab_mongo/page';
+
 
 const items = [
   {
@@ -18,6 +20,15 @@ const items = [
     children: (
       <>
         <PageEditData />
+      </>
+    ),
+  },
+  {
+    label: "MongoDB Interactions",
+    key: "3",
+    children: (
+      <>
+        <MongoDBInteractions />
       </>
     ),
   },

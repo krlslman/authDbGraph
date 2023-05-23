@@ -11,7 +11,6 @@ const TestMongoDb = () => {
     axios
       .get("/api/get_tableData")
       .then((res) => {
-        console.log(res);
         setIsConnected(res.data.isConnected); // update client side isConnected
         setDatam(res.data.datam);
       })
