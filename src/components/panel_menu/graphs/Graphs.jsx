@@ -35,7 +35,7 @@ const Graphs = () => {
         ],
       });
     }
-  }, [sliderValue]);
+  }, [JsonData, sliderValue]);
 
   const handleSliderChange = (value) => {
     setSliderValue(value);

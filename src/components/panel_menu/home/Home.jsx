@@ -1,11 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Space, Statistic, Typography } from "antd";
 import {
   DollarCircleOutlined,
-  ShoppingCartOutlined,
-  ShoppingOutlined,
-  UserOutlined,
   IssuesCloseOutlined,
   CheckCircleOutlined,
   FundProjectionScreenOutlined,
@@ -13,12 +10,11 @@ import {
 import LineChart from "../graphs/LineChart";
 import { useStateContext } from "/src/context/StateContext";
 import BarChart from "../graphs/BarChart";
+import TestMongoDb from './TestMongoDb';
 
 
 const Home = () => {
   const { dataSource, filteredDataSource } = useStateContext();
-  // let homeLineChartData = dataSource.slice(10,20)
-  // console.log("homeLineChartData: ",homeLineChartData);
   const [ homeLineChartData, setHomeLineChartData ] = useState(
     {
       labels: dataSource.slice(10,30).map((data) => data.city),
@@ -64,9 +60,11 @@ const Home = () => {
     );
   }
 
-
   return (
     <section id="">
+      
+      <TestMongoDb />
+      
       <div className="flex gap-5">
         <div className="w-1/2 flex flex-col justify-center">
           <h1 className="text-4xl m-5">Information about this project</h1>
@@ -150,7 +148,7 @@ const Home = () => {
           <button className="my-5 mx-auto btn">Click here</button>
         </div>
         <div className="w-1/2 mt-4">
-
+        
         <Space size={20} direction="vertical">
           <Typography.Title level={4}>Dashboard</Typography.Title>
           <Space direction="horizontal">

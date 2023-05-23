@@ -21,12 +21,12 @@ const DownloadTestDataModal = ({ visible, onClose }) => {
       <div className="flex flex-col gap-2">
         Download these files to import here for test purposes. 
         <div>
-            <Button onClick={() => handleDownload('csv')} type="primary" className='text-blue-500' >
+            <Button onClick={() => handleDownload('csv')} type="primary" >
             Download as CSV
             </Button>
         </div>
         <div>
-            <Button onClick={() => handleDownload('json')} type="primary" className='text-blue-500' >
+            <Button onClick={() => handleDownload('json')} type="primary" >
             Download as JSON
             </Button>
         </div>

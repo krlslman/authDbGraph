@@ -1,6 +1,5 @@
 {
   "name": "auth-db-graph",
-  "homepage": "https://master.djzjbjrgtv2dp.amplifyapp.com",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,17 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^2.6.0",
-    "@types/node": "20.2.0",
-    "@types/react": "18.2.6",
-    "@types/react-dom": "18.2.4",
     "antd": "^5.5.0",
+    "axios": "^1.4.0",
     "chart.js": "^4.3.0",
     "csvtojson": "^2.0.10",
     "default-passive-events": "^2.0.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "json-server": "^0.17.3",
+    "mongodb": "^5.5.0",
     "next": "13.4.2",
     "react": "18.2.0",
     "react-chartjs-2": "^5.2.0",
@@ -28,6 +25,10 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/node": "^20.2.3",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "@auth0/nextjs-auth0": "^2.6.0",
     "autoprefixer": "^10.4.14",
     "file-loader": "^6.2.0",
     "postcss": "^8.4.23",

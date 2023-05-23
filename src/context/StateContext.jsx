@@ -10,6 +10,7 @@ export const StateContextProvider = ({ children }) => {
   const [filteredDataSource, setFilteredDataSource] = useState(dataSource);
   const [ filterWarehouse, setFilterWarehouse ] = useState("");  
   const [radioFilter, setRadioFilter] = useState("All");
+  const [isConnected, setIsConnected] = useState(false);
 
   // Create the context value
   const contextValue = {
@@ -21,6 +22,8 @@ export const StateContextProvider = ({ children }) => {
     setFilterWarehouse,
     radioFilter,
     setRadioFilter,
+    isConnected,
+    setIsConnected,
   };
 
   // Provide the context value to children

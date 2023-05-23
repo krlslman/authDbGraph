@@ -7,6 +7,8 @@ import {
   LogoutOutlined,
   CaretDownOutlined,
   FolderOpenOutlined,
+  CloudSyncOutlined,
+  DisconnectOutlined,
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu, Avatar, Dropdown, Space } from "antd";
 import Home from "./panel_menu/home/Home";
@@ -16,6 +18,7 @@ import Image from "next/image";
 import LogoSvg from './LogoSvg'
 import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0/client';
+import { useStateContext } from "@/context/StateContext";
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -42,6 +45,7 @@ const PanelBody = () => {
 
   const [selectedKey, setSelectedKey] = useState("id_home");
   const [selectedItem, setSelectedItem] = useState(panelItems[0]);
+  const { isConnected } = useStateContext();
 
   const handleMenuSelect = ({ key }) => {
     setSelectedKey(key);
@@ -120,6 +124,9 @@ const PanelBody = () => {
                 </Breadcrumb.Item>
               </Breadcrumb>
             <div className="flex items-center gap-2 pr-2 lg:pr-5">
+                <div className="mr-3 flex items-center">
+                  {isConnected ? <CloudSyncOutlined className="text-slate-500 text-2xl mt-2" /> : <DisconnectOutlined className="text-slate-500 text-2xl mt-2" /> }
+                </div>
                 <Dropdown
                   menu={{
                     items: profileItems
@@ -136,8 +143,7 @@ const PanelBody = () => {
                       <CaretDownOutlined className="text-slate-400"/>
                     </Space>
                   </a>
-                </Dropdown>
-              
+                </Dropdown>              
             </div>
         </Header>
 
