@@ -3,29 +3,34 @@ import { useState, useEffect, useRef } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import { useStateContext } from "/src/context/StateContext";
 import axios from "axios";
-
+import {
+  UserOutlined,
+} from "@ant-design/icons";
 import React from "react";
-import commentContainer from "./commentContainer";
+import { Avatar } from "antd";
+import moment from 'moment';
+
 
 const MongoDBInteractions = () => {
+  const { user } = useStateContext();
   const [comments, setComments] = useState(null);
 
   useEffect(() => {
     axios
-      .get("/api/comment")
+      // .get(`/api/comment/comment?user=${encodeURIComponent(user.email)}`,)
+      .get(`/api/comment/comment?user=selmankorall@gmail.com`,)
       .then((res) => {
         console.log(res);
-        setComments(res.data.datam);
+        setComments(res.data);
       })
       .catch((err) => console.error(err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    console.log("istanbul: ", comments); // Log the updated state value
-  }, [comments]);
-
+  }, []); 
   
+  console.log(comments);
+  // console.log(comments[0].isLiked);
+  // console.log(comments[0].bune);
+  // console.log(comments[0].likeList.includes(comments[0].meyil));
 
 
   return (
@@ -35,43 +40,38 @@ const MongoDBInteractions = () => {
         {comments
           ? comments.map((comment) => (
               <>
-                {/* <li key={comment._id}>{comment.text}</li> */}
-
-                <li class="w-full  max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
-                  <div class="flex justify-start items-center">
-                    <img
-                      className="w-16 h-16 object-cover mb-3 mr-3 rounded-full shadow-lg"
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZwFE9UxzB8QrAEsRfLyJKLfTDkAqNtHmoKg&usqp=CAU"
-                      alt="Bonnie image"
-                    />
+                <li key={comment.id} class="flex flex-col gap-2 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
+                  <div class="flex justify-start items-center gap-2">
+                    { user.picture
+                      // eslint-disable-next-line @next/next/no-img-element
+                      ? <img src={user.picture} alt="" style={{maxHeight:"40px", borderRadius:"999px"}}/>
+                      : <Avatar size="large" icon={<UserOutlined />} /> }
                     <div className="flex justify-between w-full">
                       <div>
                         <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
-                          Selman Koral
+                          {comment.user}
                         </h5>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 pl-1">
+                        {/* <p class="text-sm text-gray-500 dark:text-gray-400 pl-1">
                           Software Enginner
-                        </p>
+                        </p> */}
                       </div>
                       <div className="">
                         <p class="text-sm text-gray-500 dark:text-gray-400">
-                          10:15
+                          {/* {comment.timestamp} */}
+                          {moment(comment.timestamp).fromNow()}
                         </p>
                       </div>
                     </div>
                   </div>
 
                   <div className="">
-                    <p class="text-sm text-gray-900 dark:text-white px-2 mb-0">
-                      Implemented a radio button change event handler to filter
-                      data based on selected options. Used state variables to
-                      store and update filtered data. Applied array filtering to
-                      retrieve
+                    <p class="text-sm text-gray-900 dark:text-white mx-2 mb-0">
+                    {comment.text}
                     </p>
                   </div>
 
-                  <div class="flex flex-col items-center pb-2">
-                    <LikeButton />
+                  <div class="flex flex-col items-end pb-2">
+                    <LikeButton comment={comment} user={user} />
                   </div>
                 </li>
               </>
@@ -85,26 +85,36 @@ const MongoDBInteractions = () => {
 export default MongoDBInteractions;
 
 
-export const LikeButton = () => {
-  const [liked, setLiked] = useState(false);
-  const [likes, setLikes] = useState(0);
+export const LikeButton = ({ comment, user}) => {
+  const [likedUi, setLikedUi] = useState(false);
+  const [likesUi, setLikesUi] = useState(comment.likes);
+  
 
-  const handleLike = () => {
-    if (liked) {
-      // Unlike the comment
-      setLikes((prevLikes) => prevLikes - 1);
-      setLiked(false);
-    } else {
-      // Like the comment
-      setLikes((prevLikes) => prevLikes + 1);
-      setLiked(true);
+  const handleLike = (comment, user) => {
+    if (likedUi) {  // Unlike the comment      
+      setLikesUi((prevLikes) => prevLikes - 1);
+      setLikedUi(false);
+    } else {  // Like the comment
+      setLikesUi((prevLikes) => prevLikes + 1);
+      setLikedUi(true);
     }
+
+    const newdata = {
+      newLiker: likedUi ? [] : [user.email], // user.email is a string value
+    };
+
+    axios
+      .patch(`/api/comment/${comment._id}`, { newdata: newdata })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
-    <button className="bg-transparent" onClick={handleLike}>
-      <i className={`ri-heart-line text-red-500 ${liked ? 'bg-red-900' : ''}`}></i>
-      {likes} Likes
+    <button className={` bg-transparent flex items-center ${comment.isLiked?"bg-pink-900":"bg-blue-100" }`} onClick={() => handleLike(comment,user)}>
+      <i className={`ri-heart-line text-red-500 text-xl ${likedUi ? 'bg-red-900' : ''}`}></i>
+      {parseInt(comment.likes) > 0 && <span className="text-slate-400 pl-1">{comment.likes}</span>}
     </button>
   );
 };

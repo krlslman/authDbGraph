@@ -17,7 +17,6 @@ import ListTabsofData from "./panel_menu/data_menu/tab";
 import Image from "next/image";
 import LogoSvg from './LogoSvg'
 import Link from 'next/link';
-import { useUser } from '@auth0/nextjs-auth0/client';
 import { useStateContext } from "@/context/StateContext";
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -40,12 +39,11 @@ const panelItems = [
 ];
 
 const PanelBody = () => {
-  const { user, error, isLoading } = useUser();
   const [collapsed, setCollapsed] = useState(false);
 
   const [selectedKey, setSelectedKey] = useState("id_data"); // opening page
   const [selectedItem, setSelectedItem] = useState(panelItems[1]); // opening active effect
-  const { isConnected } = useStateContext();
+  const { user, error, isLoading, isConnected } = useStateContext();
 
   const handleMenuSelect = ({ key }) => {
     setSelectedKey(key);

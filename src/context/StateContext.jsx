@@ -1,11 +1,13 @@
 import React, { createContext, useState, useContext } from 'react'
 import defaultData from '/src/data/data.json'
+import { useUser } from '@auth0/nextjs-auth0/client'
 
 // Create the context
 const StateContext = createContext();
 
 // Create the StateContextProvider component
 export const StateContextProvider = ({ children }) => {
+  const { user, error, isLoading } = useUser();
   const [dataSource, setDataSource] = useState(defaultData);
   const [filteredDataSource, setFilteredDataSource] = useState(dataSource);
   const [ filterWarehouse, setFilterWarehouse ] = useState("");  
@@ -14,6 +16,7 @@ export const StateContextProvider = ({ children }) => {
 
   // Create the context value
   const contextValue = {
+    user, error, isLoading,
     dataSource,
     setDataSource,
     filteredDataSource,
