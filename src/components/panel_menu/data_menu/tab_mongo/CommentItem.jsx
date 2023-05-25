@@ -10,27 +10,22 @@ const CommentItem = ({ comment }) => {
   const { user } = useStateContext();
   // console.log(user);
   return (
-    <div>
       <li
         key={comment._id}
-        className="flex flex-col gap-2 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5"
+        className="flex flex-col gap-2 w-full max-w-sm bg-white border shadow-2xl
+            border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 p-5"
       >
         <div className="flex justify-start items-center gap-2">
           {user.picture ? (
-            // <img
-            //   src={user.picture}
-            //   height={40}
-            //   width={40}
-            //   alt=""
-            //   style={{ maxWidth: "40px", borderRadius: "999px" }}
-            // />
             <Avatar size="large" icon={<UserOutlined />} />
           ) : (
             <Avatar size="large" icon={<UserOutlined />} />
           )}
           <div className="flex justify-between w-full">
             <div>
-              <h5 className="mb-1 mr-5 text-xl font-medium text-gray-900 dark:text-white">
+              <h5 className="mb-1 mr-5 text-xl font-medium text-gray-900 dark:text-white"
+                style={{maxWidth:"180px", overflow:"hidden"}}
+              >
                 {comment.user}
               </h5>
             </div>
@@ -52,10 +47,12 @@ const CommentItem = ({ comment }) => {
           <LikeButton comment={comment} />
         </div>
       </li>
-    </div>
   );
 };
 export default CommentItem;
+
+
+
 
 const LikeButton = ({ comment }) => {
   const { user } = useStateContext();
