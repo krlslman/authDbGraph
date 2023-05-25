@@ -2,22 +2,19 @@ import { useState } from "react";
 import {
   HomeOutlined,
   BarChartOutlined,
-  DropboxOutlined,
   UserOutlined,
   LogoutOutlined,
   CaretDownOutlined,
-  FolderOpenOutlined,
   CloudSyncOutlined,
   DisconnectOutlined,
 } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu, Avatar, Dropdown, Space } from "antd";
+import { Layout, Menu, Avatar, Dropdown, Space } from "antd";
 import Home from "./panel_menu/home/Home";
 import Graphs from "./panel_menu/graphs/Graphs";
 import ListTabsofData from "./panel_menu/data_menu/tab";
 import Image from "next/image";
 import LogoSvg from './LogoSvg'
 import Link from 'next/link';
-import { useStateContext } from "@/context/StateContext";
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -38,12 +35,12 @@ const panelItems = [
   // ]),
 ];
 
-const PanelBody = () => {
+const PanelBody = ({user, isConnected}) => {
   const [collapsed, setCollapsed] = useState(false);
 
   const [selectedKey, setSelectedKey] = useState("id_data"); // opening page
   const [selectedItem, setSelectedItem] = useState(panelItems[1]); // opening active effect
-  const { user, error, isLoading, isConnected } = useStateContext();
+
 
   const handleMenuSelect = ({ key }) => {
     setSelectedKey(key);
@@ -114,13 +111,8 @@ const PanelBody = () => {
 
       <Layout className="site-layout">
         <Header
-          className="site-layout-background flex justify-between items-center"
+          className="site-layout-background flex justify-end items-center"
           style={{ padding: 0, }} >
-              <Breadcrumb>
-                <Breadcrumb.Item  className="text-slate-600 pl-5 flex items-center gap-1">
-                  <FolderOpenOutlined />{selectedItem ? selectedItem.label : "..."}
-                </Breadcrumb.Item>
-              </Breadcrumb>
             <div className="flex items-center gap-2 pr-2 lg:pr-5">
                 <div className="mr-3 flex items-center">
                   {isConnected ? <CloudSyncOutlined className="text-slate-500 text-2xl mt-2" /> : <DisconnectOutlined className="text-slate-500 text-2xl mt-2" /> }
@@ -136,7 +128,7 @@ const PanelBody = () => {
                       {user?user.name:"User"}
                       { user.picture
                       // eslint-disable-next-line @next/next/no-img-element
-                      ? <img src={user.picture} alt="" style={{maxHeight:"40px", borderRadius:"999px"}}/>
+                      ? <img src={user.picture} alt="" style={{maxHeight:"40px", minHeight:"40px", borderRadius:"999px"}}/>
                       : <Avatar size="large" icon={<UserOutlined />} /> }
                       <CaretDownOutlined className="text-slate-400"/>
                     </Space>

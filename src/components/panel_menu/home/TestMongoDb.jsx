@@ -35,7 +35,7 @@ const TestMongoDb = () => {
 
   return (
     <div>
-      {datam ? (
+      {/* {datam ? (
         datam.map((item) => (
           <>
             <p>{item.city}</p>
@@ -63,7 +63,7 @@ const TestMongoDb = () => {
         <button type="submit" className="btn">
           Send
         </button>
-      </form>
+      </form> */}
     </div>
   );
 };

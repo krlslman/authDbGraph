@@ -10,7 +10,6 @@ import {
 import LineChart from "../graphs/LineChart";
 import { useStateContext } from "/src/context/StateContext";
 import BarChart from "../graphs/BarChart";
-import TestMongoDb from "./TestMongoDb";
 
 const Home = () => {
   const { dataSource, filteredDataSource } = useStateContext();
@@ -62,7 +61,6 @@ const Home = () => {
     <section id="">
       
 
-      <TestMongoDb />
 
       <div className="flex gap-5">
         <div className="w-1/2 flex flex-col justify-center">
