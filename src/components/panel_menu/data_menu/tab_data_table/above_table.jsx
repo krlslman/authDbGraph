@@ -69,7 +69,7 @@ const AboveTable = () => {
 
         <div className="flex gap-2 m-2">
           <>
-            <strong>Main Data: </strong>
+            <strong>City Filter: </strong>
             <Radio.Group name="radiogroup" value={`${radioFilter==="All"?"All":(radioFilter === "Turochak" ? "Turochak" : "Ourozinho")}`} onChange={(e)=>onChangeRadioButton(e.target.value)}>
               <Radio value={"All"}>All</Radio>
               <Radio value={"Turochak"}>Turochak</Radio>

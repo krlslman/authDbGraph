@@ -13,7 +13,7 @@ export default async function handler(
       const db = client.db("AdminDashboardDB");
       const collection = db.collection("comments");
       // Retrieve all comments from the database
-      const comments = await collection.find().toArray();
+      const comments = await collection.find().sort({ timestamp: -1 }).toArray() ;
 
       // Loop through each comment and determine if it is liked by the user
       const commentsNew = comments.map((comment) => {

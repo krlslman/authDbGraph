@@ -26,7 +26,8 @@ const CommentItem = ({ comment }) => {
               <h5 className="mb-1 mr-5 text-xl font-medium text-gray-900 dark:text-white"
                 style={{maxWidth:"180px", overflow:"hidden"}}
               >
-                {comment.user}
+                {/* {comment.user} */}
+                {comment.user && comment.user.includes(" ") ? `${comment.user.split(" ")[0]} ${comment.user.split(" ")[1].charAt(0).toUpperCase()}.` : comment.user}
               </h5>
             </div>
             <div>

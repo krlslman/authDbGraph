@@ -69,3 +69,20 @@ button {
   height: 300px;
   max-height: 50%;
 }
+
+
+
+@media (max-width: 767px) {
+  #logo {
+    width: 30px;
+    height: 30px;
+  }
+  .ant-menu-item {
+    // padding: 8px !important;
+    margin: auto !important;
+    width: min-content !important;
+  }
+  .ant-menu {
+    margin-right: 10px;
+  }
+}

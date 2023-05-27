@@ -3,29 +3,34 @@ import axios from "axios";
 import CommentItem from "./CommentItem";
 import { useStateContext } from "/src/context/StateContext";
 
-const MongoDBInteractions = () => {
+export const MongoDBInteractions = () => {
   const { user } = useStateContext();
   const [comments, setComments] = useState(null);
   const [commentText, setCommentText] = useState('');
-  console.log(user);
+  const [needResfresh, setNeedResfresh] = useState(true)
+  // console.log(user);
 
   useEffect(() => {
     const fetchComments = async () => {
       try {
         const response = await axios.get(`/api/comment?user=${user.email}`);
         setComments(response.data);
+        setNeedResfresh(false)
       } catch (error) {
         console.error(error);
       }
     };
+    console.log("Hello");
 
     fetchComments();
-  }, [user.email]);
-  console.log(comments);
+  }, [user.email, needResfresh]);
+  // console.log(comments);
 
-  const handleCommentSubmit = () => {
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
     const newComment = {
-      user: user.given_name || user.family_name || user.email.split('@')[0],
+      user: user.name || user.email.split('@')[0],
+      // user: user.given_name || user.family_name || user.email.split('@')[0],
       text: commentText,
       likeList: [],
       timestamp: new Date().toISOString(),
@@ -35,14 +40,15 @@ const MongoDBInteractions = () => {
     axios.post('/api/comment/post', newComment)
       .then((response) => {
         // Handle the response if needed
-        console.log(response);
-        // Reset the comment text input
         setCommentText('');
       })
       .catch((error) => {
         // Handle the error if needed
         console.error(error);
       });
+
+    setNeedResfresh(true)
+      
   };
 
   return (
@@ -93,7 +99,7 @@ const MongoDBInteractions = () => {
       </form>
       {/* </div> */}
 
-      <ul className="flex flex-wrap list-none justify-center gap-2">
+      <ul className="flex flex-wrap list-none justify-center gap-2 p-0">
         {comments ? (
           comments.map((comment) => (
             <>
@@ -108,4 +114,4 @@ const MongoDBInteractions = () => {
   );
 };
 
-export default MongoDBInteractions;
+// export default MongoDBInteractions;

@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
-import { Card, Space, Statistic, Typography } from "antd";
+import { BackTop, Card, Space, Statistic, Typography } from "antd";
 import {
   DollarCircleOutlined,
   IssuesCloseOutlined,
@@ -58,15 +58,20 @@ const Home = () => {
   }
 
   return (
-    <section id="">
-      
-
-
-      <div className="flex gap-5">
-        <div className="w-1/2 flex flex-col justify-center">
+    <section id="" style={{maxWidth:"100vw",overflow: "hidden",}}>
+      <div className="flex flex-wrap-reverse gap-lg-5 sm:flex-col md:flex-row">
+        <div className="sm:w-full lg:w-1/2 flex flex-col justify-center">
           <h1 className="text-4xl m-5">Information about this project</h1>
 
-          <ol className="">
+          <ol className="p-2 m-auto ml-5">
+            <li>
+              <h2>MongoDB Connection</h2>
+              <p>
+              Implemented a MongoDB connection handler to establish a connection 
+              to a MongoDB database. Used the official MongoDB driver to 
+              interact with the database.
+              </p>
+            </li>
             <li>
               <h2>Data Filtering:</h2>
               <p>
@@ -143,12 +148,18 @@ const Home = () => {
           </ol>
 
           <button className="my-5 mx-auto btn">Click here</button>
+          <BackTop />
         </div>
-        <div className="w-1/2 mt-4">
-          <Space size={20} direction="vertical">
+
+        <div className="sm:w-full lg:w-1/2 mt-4 flex flex-wrap">
+          <Space size={20} direction="vertical"
+          style={{ width:"100vw" }}
+          className="flex flex-col items-center justify-center">
             <Typography.Title level={4}>Dashboard</Typography.Title>
-            <Space direction="horizontal">
+            <Space direction="horizontal" 
+              className="flex flex-row flex-wrap items-center justify-center mb-4">
               <DashboardCard
+                className="sm:w-1/2"
                 icon={
                   <IssuesCloseOutlined
                     style={{
@@ -164,6 +175,7 @@ const Home = () => {
                 value={"2412"}
               />
               <DashboardCard
+                className="sm:w-1/2"
                 icon={
                   <CheckCircleOutlined
                     style={{
@@ -212,16 +224,16 @@ const Home = () => {
           </Space>
 
           <div
-            className="testStyling homeImage m-5"
-            style={{ overflow: "hidden" }}
+            className="p-0 testStyling homeImage m-5"
+            style={{ overflow: "hidden", width:"100vw",  height:"auto" }}
           >
             <LineChart chartData={homeLineChartData} />
           </div>
           <div
-            className="testStyling homeImage m-5"
-            style={{ overflow: "hidden" }}
+            className="p-0 testStyling homeImage m-5"
+            style={{ overflow: "hidden", width:"100vw",  height:"auto" }}
           >
-            <BarChart chartData={homeLineChartData} />
+            <BarChart chartData={homeLineChartData} style={{maxWidth:"100vw"}} />
           </div>
         </div>
       </div>

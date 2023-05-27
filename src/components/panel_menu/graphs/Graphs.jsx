@@ -42,18 +42,18 @@ const Graphs = () => {
   };
 
   return (
-    <>
+    <div className='' style={{maxWidth:"100vw", overflow:"hidden"}}>
       <Slider
         className="p-5"
-        tooltip={{ open: true }}
+        // tooltip={{ open: true }}
         range={{ draggableTrack: true }}
         value={sliderValue}
         onChange={handleSliderChange}
         max={JsonData.length}
         min={0}
       />
-      <div className="flex">
-        <div className="w-1/2">
+      <div className="sm:flex flex-col lg:flex-row gap-5">
+        <div className="sm:w-full lg:w-1/2 sm:flex flex-col gap-5" >
           <div>
             {userData && userData.labels && userData.labels.length > 0 ? (
             <BarChart chartData={userData} />
@@ -71,7 +71,7 @@ const Graphs = () => {
           </div>
         </div>
 
-        <div className="w-1/2">
+        <div className="sm:w-full lg:w-1/2 flex justify-center">
           {userData && userData.labels && userData.labels.length > 0 ? (
             <PieChart chartData={userData} />
           ) : (
@@ -79,7 +79,7 @@ const Graphs = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
